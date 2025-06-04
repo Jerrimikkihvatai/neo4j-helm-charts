@@ -18,6 +18,7 @@ spec:
         name: {{ include "neo4j.fullname" . }}-reverseproxy
     spec:
       securityContext: {{ toYaml .Values.reverseProxy.podSecurityContext | nindent 8 }}
+      nodeSelector: {{ toYaml .Values.reverseProxy.nodeSelector | nindent 8 }}
       containers:
         - name: {{ include "neo4j.fullname" . }}-reverseproxy
           image: {{ $.Values.reverseProxy.image }}
