@@ -28,6 +28,7 @@ reverseProxy:
       drop:
         - all
 
+  nodeSelector: {}
   podSecurityContext:
     runAsNonRoot: true
     runAsUser: 7474
